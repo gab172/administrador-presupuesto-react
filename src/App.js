@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Pregunta from "./components/Pregunta";
+import Formulario from "./components/Formulario";
+import Gasto from "./components/Gasto";
 
 function App() {
+  const [presupuesto, guardarPresupuesto] = useState(0);
+  const [formulario, mostrarFormulario] = useState(false);
+  const [gastos, guardarGastos] = useState([]);
+
+  const crearGasto = (gasto) => guardarGastos([...gastos, gasto]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="titulo">Gastos Semanales</h1>
+      {formulario ? (
+        <div className="container-formulario">
+          <Formulario
+            crearGasto={crearGasto}
+            presupuesto={presupuesto}
+            guardarPresupuesto={guardarPresupuesto}
+          />
+          <Gasto presupuesto={presupuesto} gastos={gastos} />
+        </div>
+      ) : (
+        <Pregunta
+          guardarPresupuesto={guardarPresupuesto}
+          mostrarFormulario={mostrarFormulario}
+        />
+      )}
+    </>
   );
 }
 

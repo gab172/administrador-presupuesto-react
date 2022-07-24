@@ -1,13 +1,117 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+}
+
+.titulo{
+  text-align: center;
+  font-weight: 300;
+  font-size: 4rem;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.container{
+  width: 90%;
+  margin: 10rem auto;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  height: 400px;
+}
+
+.form-presupuesto{
+  width: 100%;
+}
+
+.form-presupuesto__input{
+  display: block;
+  width: 100%;
+  padding: .7rem;
+  border: 1px solid #00d9ff;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.button{
+  background-color: #00d9ff;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  color: #fff;
+  font-weight: 900;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+label{
+  margin-top:2rem ;
+  display: block;
+}
+
+
+.container-formulario{
+  width: 90%;
+  margin: 10rem auto;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subtitle{
+  text-align: center;
+  font-weight: 300;
+  font-size: 2rem;
+  color: #000;
+  margin-top: 2rem;
+}
+
+.gastos-container{
+  width: 100%;
+}
+
+.gastos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem;
+}
+
+.gastos__valor{
+  padding: 1rem;
+  background-color: #3275a8;
+  color: #fff;
+}
+
+.gastos__presupuesto{
+  background-color: #adcbff;
+  padding: 1rem;
+  color: #fff;
+  border: 1px solid #777;
+  margin: 1rem;
+}
+
+.gastos__restante{
+  background-color: #ff7878;
+  padding: 1rem;
+  color: #fff;
+  border: 1px solid #777;
+  margin: 1rem;
+}
+
+@media (min-width:720px){
+  .container-formulario{
+    flex-direction: row;
+  }
 }
